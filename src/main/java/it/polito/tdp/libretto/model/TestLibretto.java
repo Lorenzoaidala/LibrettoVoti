@@ -7,6 +7,7 @@ public class TestLibretto {
 	public static void main(String[] args) {
 
 		Libretto libretto = new Libretto();
+		Libretto librettoVotiUguali = new Libretto();
 
 		Voto voto1 = new Voto("Analisi 1", 25, LocalDate.of(2018, 2, 16));
 		libretto.add(voto1);
@@ -26,8 +27,14 @@ public class TestLibretto {
 		Voto voto6 = new Voto("Etica delle tecniche", 29, LocalDate.of(2018, 7, 1));
 		libretto.add(voto6);
 		
+		for(Voto v : libretto.voti) {
+			librettoVotiUguali.add(v, 25);
+		}
+		
 		
 			System.out.print(libretto.Elenco());
+			System.out.println("\n------Esami superati con 25------");
+			System.out.print(librettoVotiUguali.ElencoVotiUguali());
 		
 	}
 
