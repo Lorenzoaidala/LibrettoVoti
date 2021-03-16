@@ -18,7 +18,7 @@ public class TestLibretto {
 		Voto voto3 = new Voto("Chimica", 25, LocalDate.of(2020, 9, 2));
 		libretto.add(voto3);
 		
-		Voto voto4 = new Voto("Fisica 1 ", 19, LocalDate.of(2018, 9, 12));
+		Voto voto4 = new Voto("Fisica 1", 19, LocalDate.of(2018, 9, 12));
 		libretto.add(voto4);
 		
 		Voto voto5 = new Voto("Algebra Lineare", 25, LocalDate.of(2018, 7, 15));
@@ -27,14 +27,25 @@ public class TestLibretto {
 		Voto voto6 = new Voto("Etica delle tecniche", 29, LocalDate.of(2018, 7, 1));
 		libretto.add(voto6);
 		
+		System.out.println("--------PUNTO 1----------\n");
+		
+			System.out.print(libretto.Elenco());
+		
+		System.out.println("-------PUNTO 2--------\n");
 		for(Voto v : libretto.voti) {
 			librettoVotiUguali.add(v, 25);
 		}
-		
-		
-			System.out.print(libretto.Elenco());
-			System.out.println("\n------Esami superati con 25------");
-			System.out.print(librettoVotiUguali.ElencoVotiUguali());
+			
+			System.out.print(librettoVotiUguali.Elenco());
+			
+		System.out.println("-------PUNTO 3------------\n");
+			
+			String esameCercato = libretto.cercaEsame("Fisica 1");
+			System.out.println(esameCercato);
+			
+			System.out.println("-----------PUNTO 4--------------\n");
+			Voto votoEsistente = new Voto("Fisica 1", 19, LocalDate.of(2018, 9, 12));
+			System.out.println(libretto.esameEsistente(votoEsistente));
 		
 	}
 
