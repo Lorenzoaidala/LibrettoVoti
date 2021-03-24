@@ -59,4 +59,7 @@ public class Libretto {
 		else
 			return "ESAME NON TROVATO";
 	}
+	public String stampati(Voto voto) {
+		return voto.toString();
+	}
 }
